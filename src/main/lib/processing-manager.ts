@@ -521,6 +521,14 @@ export class ProcessingManager {
 
  LANGUAGE: ${language}
 
+ IMPORTANT: Make this solution UNIQUE and natural, as if written by a human developer:
+ - Use varied, concise variable names (e.g., 'l' and 'r' instead of 'left' and 'right', 'res' instead of 'result', 'n' for length)
+ - Choose ONE of these styles randomly: iterative/recursive/functional approach
+ - Use different loop styles when possible (while vs for, range vs enumerate)
+ - Vary the solution structure - try different valid approaches each time
+ - Add subtle personal touches like your own variable naming preferences
+ - Don't make it overly perfect or too well-documented - make it feel human
+
  I need the response in the following format:
  1. Code: A clean, optimized implementation in ${language}
  2. Your Thoughts: A list of key insights and reasoning behind your approach
@@ -529,7 +537,7 @@ export class ProcessingManager {
 
  For complexity explanations, please be thorough. For example: "Time complexity: O(n) because we iterate through the array only once. This is optimal as we need to examine each element at least once to find the solution." or "Space complexity: O(n) because in the worst case, we store all elements in the hashmap. The additional space scales linearly with the input size."
 
- Your solution should be efficient, well-commented, and handle edge cases.
+ Your solution should be efficient, handle edge cases, but look naturally human-written with personal coding style choices.
  `
 
       let responseContent
@@ -547,7 +555,7 @@ export class ProcessingManager {
           messages: [
             {
               role: 'system',
-              content: `You are an expert coding interview assistant. Provide clear, optimal solutions with detailed explanations.`
+              content: `You are an expert coding interview assistant. Provide clear, optimal solutions with detailed explanations. Write code as if you're a human developer with your own personal style - use varied variable names, different approaches, and natural coding patterns. Each solution should be unique.`
             },
             {
               role: 'user',
@@ -555,7 +563,7 @@ export class ProcessingManager {
             }
           ],
           max_tokens: 4000,
-          temperature: 0.2
+          temperature: 0.7
         })
 
         responseContent = solutionResponse.choices[0].message.content
@@ -583,8 +591,9 @@ export class ProcessingManager {
             }
           ],
           generationConfig: {
-            temperature: 0.2
-          }
+            temperature: 0.7
+          },
+          systemInstruction: `You are an expert coding interview assistant. Provide clear, optimal solutions with detailed explanations. Write code as if you're a human developer with your own personal style - use varied variable names, different approaches, and natural coding patterns. Each solution should be unique.`
         })
 
         responseContent = result.response.text()
