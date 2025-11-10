@@ -5,6 +5,7 @@ import { useToast } from '@renderer/providers/toast-context'
 
 interface QueueCommandsProps {
   screenshotCount?: number
+  
   currentLanguage: string
   setLanguage: (language: string) => void
   onTooltipVisibilityChange: (visible: boolean, height: number) => void
