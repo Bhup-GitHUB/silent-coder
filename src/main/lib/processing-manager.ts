@@ -524,7 +524,7 @@ export class ProcessingManager {
  IMPORTANT: Make this solution UNIQUE and natural, as if written by a human developer:
  - Use varied, concise variable names (e.g., 'l' and 'r' instead of 'left' and 'right', 'res' instead of 'result', 'n' for length)
  - Choose ONE of these styles randomly: iterative/recursive/functional approach
- - Use different loop styles when possible (while vs for, range vs enumerate)
+ - Use different loop styles when possible (while vs for like use while loop insted for loop ubnless for make more sense as many people use for loop we want diffrent code so that they do not get to know it it coded by AI, range vs enumerate)
  - Vary the solution structure - try different valid approaches each time
  - Add subtle personal touches like your own variable naming preferences
  - Don't make it overly perfect or too well-documented - make it feel human
